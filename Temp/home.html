@@ -1,0 +1,614 @@
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        *{
+        margin: 0; padding: 0;
+        box-sizing: border-box;
+        font-family: 'Josefin Sans', sans-serif;
+        }
+        
+        header{
+         width: 100%;
+         height: 100vh;
+         background-repeat: no-repeat;
+         background-size: 100% 100%;
+        
+        }
+    
+        img {
+            max-width:80%;
+            height:auto;
+            padding-left: 40px;
+        }
+    
+        a:link {
+            text-decoration: none;
+          }
+        
+        .mainheader{
+         width: 100%;
+         height: 100px;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+        }
+        
+        .mainheader .logo img{
+         width: 30%; height: 30%;
+         padding-left: 50px;
+        }
+        
+        
+        .nav {
+            width: 100%;
+            height: 40px;
+            position: absolute;
+            line-height: 40px;
+            text-align: center;
+        }
+        
+        .nav div.logo {
+            float: left;
+            width: auto;
+            height: auto;
+            padding-left: 1.5rem;
+        }
+        
+        
+    
+        .nav div.main_list {
+            height: 65px;
+            float: right;
+        }
+        
+        .nav div.main_list ul {
+            width: 100%;
+            height: 65px;
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav div.main_list ul li {
+            width: auto;
+            height: 65px;
+            padding: 0;
+            padding-right: 3rem;
+        }
+        
+        .nav div.main_list ul li a {
+            text-decoration: none;
+            color: #0070fa;
+            line-height: 30px;
+            font-size: 2rem;
+        }
+        
+        .nav div.main_list ul li a:hover {
+            color: #0070fa,;
+        }
+        
+        .navTrigger {
+            display: none;
+        }
+        
+        .menubtn{
+         margin-right: 60px;
+        }
+        .mainheader button{
+         padding: 10px 45px;
+         text-align: center;
+         font-size: 14px;
+         color: #fff;
+         border: none;
+         background-image: linear-gradient(to right,#649bff,#0070fa,#649bff);
+         border-radius: 10px;
+        }
+        
+        
+        main{
+         width: 100%;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+        }
+        
+        main .right-sec{
+         padding-right: 70px;
+        }
+        
+        main .left-sec{
+         padding-left: 100px;
+        }
+        
+        .left-sec h2{
+         font-size: 20px;
+         text-transform: capitalize;
+         font-weight: lighter;
+         color: #242424;
+         margin-top: 100px;
+        }
+        
+        .left-sec h1{
+         font-size: 55px;
+         text-transform: capitalize;
+         font-weight: 700;
+         margin: 15px 0;
+        }
+        
+        .left-sec p{
+         margin-bottom: 20px;
+         inline-size: 400px;
+        overflow-wrap: break-word;
+        }
+        
+        .left-sec a{
+         padding: 15px 45px;
+         text-align: center;
+         font-size: 14px;
+         color: #fff;
+         border: none;
+         background-image: linear-gradient(to right,#649bff,#0070fa,#649bff);
+         border-radius: 10px;
+         position: relative;
+         z-index: 1;
+        transition: color 0.5s;
+        }
+    
+        .left-sec a span{
+            width: 0;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgb(158, 199, 245);
+            z-index: -1;
+            transition: 0.5s;
+        }
+        .left-sec a:hover span{
+            width: 100%;
+            border-radius: 10px;
+        }
+        .left-sec a:hover{
+            color: black;
+            border-radius: 10px;
+        }
+    
+        #footer{
+            padding: 10px 0 20px;
+            background:#efefef;
+        
+        }
+        .social-links{
+            text-align: center;
+        }
+        .social-links .fa{
+            height: 40px;
+            width: 40px;
+            font-size: 20px;
+            line-height: 40px;
+            border: 1px solid linear-gradient(to right,#649bff,#0070fa,#649bff);
+            margin: 10px 5px 0;
+            border-radius: 10px;
+            color: linear-gradient(to right,#649bff,#0070fa,#649bff);
+            cursor: pointer;
+            transition: 0.5s;
+        }
+        .social-links .fa:hover{
+            background: linear-gradient(to right,#649bff,#0070fa,#649bff);
+            color: #fff;
+            transform: translateY(-7px);
+        }
+        .social-links p{
+            font-size: 12px;
+            margin-top: 10px;
+        }
+        .fa-envelope{
+            color: #551a8b;
+        }
+    
+    
+        /* Media qurey section */
+    
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        .container {
+            margin: 0;
+        }
+    }
+    
+    @media screen and (max-width:768px) {
+        .navTrigger {
+            display: block;
+        }
+        .nav div.logo {
+            margin-left: 15px;
+            width: 50%;
+            height: 50%;
+        }
+        .nav div.main_list {
+            width: 100%;
+            height: 0;
+            overflow: hidden;
+        }
+        .nav div.show_list {
+            height: auto;
+            display: none;
+        }
+        .nav div.main_list ul {
+            flex-direction: column;
+            width: 100%;
+            height: 100vh;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background-color: rgba(255,255,255,.3);
+            backdrop-filter: blur(10px);
+            /*same background color of navbar*/
+            background-position: center top;
+        }
+        .nav div.main_list ul li {
+            width: 100%;
+            text-align: right;
+        }
+        .nav div.main_list ul li a {
+            text-align: center;
+            width: 100%;
+            font-size: 1.5rem;
+            padding: 20px;
+        }
+        .nav div.media_button {
+            display: block;
+        }
+    
+        img{
+            width:100% ;
+            height: 100%;
+            
+        }
+        .left-sec h1{
+            font-size: 40px;
+        }
+    
+    
+        #footer{
+            padding: 10px 0 20px;
+            margin-top: 10px;
+            background:#efefef;
+        }
+        .right-sec{
+            position: absolute;
+            top: 80%;
+            right: 5%;
+            width: 90%;
+        }
+        .left-sec{
+            position: absolute;
+            top: 5%;
+            margin-left: 0px;
+            left: -25%;
+        }
+        .left-sec a{
+            width: 50%;
+        }
+    
+        .left-sec p{
+            width: fit-content;
+            font-size: 15px;
+            padding-right: 5px;
+        }
+        .mainheader {
+            padding-left: 0px;
+        }
+        
+    
+    }
+    
+    
+    
+    
+    .navTrigger {
+        cursor: pointer;
+        width: 30px;
+        height: 25px;
+        margin: auto;
+        position: absolute;
+        right: 30px;
+        top: 0;
+        bottom: 0;
+    }
+    
+    .navTrigger i {
+        background-color: #0070fa;
+        border-radius: 2px;
+        content: '';
+        display: block;
+        width: 100%;
+        height: 4px;
+    }
+    
+    .navTrigger i:nth-child(1) {
+        -webkit-animation: outT 0.8s backwards;
+        animation: outT 0.8s backwards;
+        -webkit-animation-direction: reverse;
+        animation-direction: reverse;
+    }
+    
+    .navTrigger i:nth-child(2) {
+        margin: 5px 0;
+        -webkit-animation: outM 0.8s backwards;
+        animation: outM 0.8s backwards;
+        -webkit-animation-direction: reverse;
+        animation-direction: reverse;
+    }
+    
+    .navTrigger i:nth-child(3) {
+        -webkit-animation: outBtm 0.8s backwards;
+        animation: outBtm 0.8s backwards;
+        -webkit-animation-direction: reverse;
+        animation-direction: reverse;
+    }
+    
+    .navTrigger.active i:nth-child(1) {
+        -webkit-animation: inT 0.8s forwards;
+        animation: inT 0.8s forwards;
+    }
+    
+    .navTrigger.active i:nth-child(2) {
+        -webkit-animation: inM 0.8s forwards;
+        animation: inM 0.8s forwards;
+    }
+    
+    .navTrigger.active i:nth-child(3) {
+        -webkit-animation: inBtm 0.8s forwards;
+        animation: inBtm 0.8s forwards;
+    }
+    
+    @-webkit-keyframes inM {
+        50% {
+            -webkit-transform: rotate(0deg);
+        }
+        100% {
+            -webkit-transform: rotate(45deg);
+        }
+    }
+    
+    @keyframes inM {
+        50% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(45deg);
+        }
+    }
+    
+    @-webkit-keyframes outM {
+        50% {
+            -webkit-transform: rotate(0deg);
+        }
+        100% {
+            -webkit-transform: rotate(45deg);
+        }
+    }
+    
+    @keyframes outM {
+        50% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(45deg);
+        }
+    }
+    
+    @-webkit-keyframes inT {
+        0% {
+            -webkit-transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+            -webkit-transform: translateY(9px) rotate(0deg);
+        }
+        100% {
+            -webkit-transform: translateY(9px) rotate(135deg);
+        }
+    }
+    
+    @keyframes inT {
+        0% {
+            transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+            transform: translateY(9px) rotate(0deg);
+        }
+        100% {
+            transform: translateY(9px) rotate(135deg);
+        }
+    }
+    
+    @-webkit-keyframes outT {
+        0% {
+            -webkit-transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+            -webkit-transform: translateY(9px) rotate(0deg);
+        }
+        100% {
+            -webkit-transform: translateY(9px) rotate(135deg);
+        }
+    }
+    
+    @keyframes outT {
+        0% {
+            transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+            transform: translateY(9px) rotate(0deg);
+        }
+        100% {
+            transform: translateY(9px) rotate(135deg);
+        }
+    }
+    
+    @-webkit-keyframes inBtm {
+        0% {
+            -webkit-transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+            -webkit-transform: translateY(-9px) rotate(0deg);
+        }
+        100% {
+            -webkit-transform: translateY(-9px) rotate(135deg);
+        }
+    }
+    
+    @keyframes inBtm {
+        0% {
+            transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+            transform: translateY(-9px) rotate(0deg);
+        }
+        100% {
+            transform: translateY(-9px) rotate(135deg);
+        }
+    }
+    
+    @-webkit-keyframes outBtm {
+        0% {
+            -webkit-transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+            -webkit-transform: translateY(-9px) rotate(0deg);
+        }
+        100% {
+            -webkit-transform: translateY(-9px) rotate(135deg);
+        }
+    }
+    
+    @keyframes outBtm {
+        0% {
+            transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+            transform: translateY(-9px) rotate(0deg);
+        }
+        100% {
+            transform: translateY(-9px) rotate(135deg);
+        }
+    }
+    
+    .affix {
+        padding: 0;
+        background-color: transparent;
+    }
+    
+    
+    .myH2 {
+        text-align:center;
+        font-size: 4rem;
+    }
+    .myP {
+        text-align: justify;
+        padding-left:15%;
+        padding-right:15%;
+        font-size: 15px;
+    }
+    @media all and (max-width:700px){
+        .myP {
+            padding:2%;
+        }
+    
+    }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thyroid Disease Prediction</title>
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="mainheader">
+
+            <nav class="nav">
+                <div class="container">
+                    <div class="logo">
+                        <img src="https://github.com/Ganesh-Thorat-01/Thyroid-Disease-Detection/blob/main/static/images/banner_1.png?raw=true">
+
+                    </div>
+                    <div id="mainListDiv" class="main_list">
+                        <ul class="navlinks">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="https://ganeshthrat.herokuapp.com" target="_blank">Portfolio</a></li>
+                            <li><a href="mailto: thora.ganeshscoe@gmail.com" target="_blank">Contact</a></li>
+                        </ul>
+                    </div>
+                    <span class="navTrigger">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </span>
+                </div>
+            </nav>
+
+        </div>
+
+        <main>
+            <section class="left-sec">
+                <h2> We Are Here For Your Care</h2>
+                <h1>Thyroid Disease Prediction</h1>
+                <p>Your thyroid creates and produces hormones play a role in many
+                    different systems throughout your body. When your thyroid makes
+                    either too much or too little of these important hormones, it’s
+                    called a thyroid disease.There are several different types of
+                    disease, including hyperthyroidism, hypothyroidism, thyroiditis
+                    Hashimoto’s thyroiditis.</p>
+                    <br><br>
+                <div>
+                    <a href="/predict"><span></span>PREDICT</a>
+                    <a href="/moreinfo"><span></span>MORE INFO</a>
+                </div>
+            </section>
+
+            <section class="right-sec">
+                <figure>
+                    <img src="https://github.com/Ganesh-Thorat-01/Thyroid-Disease-Detection/blob/main/static/images/banner_img.png?raw=true">
+                </figure>
+            </section>
+        </main>
+    </header>
+    <section id="footer">
+        <div class="social-links">
+            <a href="https://github.com/Ganesh-Thorat-01" target="_blank"><i class="fa fa-github"></i></a>
+            <a href="mailto:thorat.ganeshscoe@gmail.com" target="_blank"><i class="fa fa-envelope"></i></a>
+            <a href="https://www.instagram.com/ganesh_thorat__/" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="https://twitter.com/Ganesh_Thorat_" target="_blank"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.youtube.com/channel/UCXhvVTaw3a8onPxwv2TbwUw" target="_blank"><i class="fa fa-youtube-play"></i></a>
+            <p>&copy; Copyright</p>
+
+        </div>
+    </section>
+
+
+
+<!-- Function used to shrink nav bar removing paddings and adding black background -->
+    <script>
+        $(window).scroll(function() {
+            if ($(document).scrollTop() > 50) {
+                $('.nav').addClass('affix');
+                console.log("OK");
+            } else {
+                $('.nav').removeClass('affix');
+            }
+        });
+    </script>
+</body>
+
+</html>

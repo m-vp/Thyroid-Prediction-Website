@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+
+    <title>User Input Form</title>
+</head>
+<body>
+
+    <h2>User Input Form</h2>
+
+    <form method="post" action="{% url 'result' %}">
+        {% csrf_token %}
+        
+        <!-- User Field -->
+        <label for="user">User:</label>
+        <input type="text" id="user" name="user" required>
+
+        <!-- Age Field -->
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" step="0.01" required>
+
+        <!-- Sex Field -->
+        <label for="sex">Sex:</label>
+        <select id="sex" name="sex" required>
+            <option value=1>Male</option>
+            <option value=0>Female</option>
+        </select>
+
+        <!-- On Thyroxine -->
+        <label for="on_thyroxine">On Thyroxine:</label>
+        <select id="on_thyroxine" name="on_thyroxine" required>
+            <option value=0>False</option>
+            <option value=1>True</option>
+        </select>
+
+        <!-- Query on Thyroxine -->
+        <label for="query_on_thyroxine">Query on Thyroxine:</label>
+        <select id="query_on_thyroxine" name="query_on_thyroxine" required>
+            <option value=0>False</option>
+            <option value=1>True</option>
+        </select>
+
+        <!-- On Antithyroid Medication -->
+        <label for="on_antithyroid_medication">On Antithyroid Medication:</label>
+        <select id="on_antithyroid_medication" name="on_antithyroid_medication" required>
+            <option value=0>False</option>
+            <option value=1>True</option>
+        </select>
+
+        <!-- Sick -->
+        <label for="sick">Sick:</label>
+        <select id="sick" name="sick" required>
+            <option value=0>False</option>
+            <option value=1>True</option>
+        </select>
+
+        <!-- Pregnant -->
+        <label for="pregnant">Pregnant:</label>
+        <select id="pregnant" name="pregnant" required>
+            <option value=0>False</option>
+            <option value=1>True</option>
+        </select>
+
+        <!-- Thyroid Surgery -->
+        <label for="thyroid_surgery">Thyroid Surgery:</label>
+        <select id="thyroid_surgery" name="thyroid_surgery" required>
+            <option value=0>False</option>
+            <option value=1>True</option>
+        </select>
+
+        <!-- I131 Treatment -->
+        <label for="I131_treatment">I131 Treatment:</label>
+        <select id="I131_treatment" name="I131_treatment" required>
+            <option value=0>False</option>
+            <option value=1>True</option>
+        </select>
+
+        <!-- Query Hypothyroid -->
+        <label for="query_hypothyroid">Query Hypothyroid:</label>
+        <select id="query_hypothyroid" name="query_hypothyroid" required>
+            <option value=0>False</option>
+            <option value=1>True</option>
+        </select>
+
+        <!-- Query Hyperthyroid -->
+        <label for="query_hyperthyroid">Query Hyperthyroid:</label>
+        <select id="query_hyperthyroid" name="query_hyperthyroid" required>
+            <option value=0>False</option>
+            <option value=1>True</option>
+        </select>
+
+        <!-- Lithium -->
+        <label for="lithium">Lithium:</label>
+        <select id="lithium" name="lithium" required>
+            <option value=0>False</option>
+            <option value=1>True</option>
+        </select>
+
+        <!-- Goitre -->
+        <label for="goitre">Goitre:</label>
+        <select id="goitre" name="goitre" required>
+            <option value=0>False</option>
+            <option value=1>True</option>
+        </select>
+
+        <!-- Tumor -->
+        <label for="tumor">Tumor:</label>
+        <select id="tumor" name="tumor" required>
+            <option value=0>False</option>
+            <option value=1>True</option>
+        </select>
+
+        <!-- Hypopituitary -->
+        <label for="hypopituitary">Hypopituitary:</label>
+        <select id="hypopituitary" name="hypopituitary" required>
+            <option value=0>False</option>
+            <option value=1>True</option>
+        </select>
+
+        <!-- Psych -->
+        <label for="psych">Psych:</label>
+        <select id="psych" name="psych" required>
+            <option value=0>False</option>
+            <option value=1>True</option>
+        </select>
+
+        <!-- TSH Measured -->
+        <label for="TSH_measured">TSH Measured:</label>
+        <select id="TSH_measured" name="TSH_measured" required>
+            <option value=0>False</option>
+            <option value=1>True</option>
+        </select>
+
+        <!-- TSH -->
+        <label for="TSH">TSH:</label>
+        <input type="number" id="TSH" name="TSH" step="0.01" required>
+
+        <!-- T3 Measured -->
+        <label for="T3_measured">T3 Measured:</label>
+        <select id="T3_measured" name="T3_measured" required>
+            <option value=0>False</option>
+            <option value=1>True</option>
+        </select>
+
+        <!-- T3 -->
+        <label for="T3">T3:</label>
+        <input type="number" id="T3" name="T3" step="0.01" required>
+
+        <!-- TT4 Measured -->
+        <label for="TT4_measured">TT4 Measured:</label>
+        <select id="TT4_measured" name="TT4_measured" required>
+            <option value=0>False</option>
+            <option value=1>True</option>
+        </select>
+
+        <!-- TT4 -->
+        <label for="TT4">TT4:</label>
+        <input type="number" id="TT4" name="TT4" step="0.01" required>
+
+        <!-- T4U Measured -->
+        <label for="T4U_measured">T4U Measured:</label>
+        <select id="T4U_measured" name="T4U_measured" required>
+            <option value=0>False</option>
+            <option value=1>True</option>
+        </select>
+
+        <!-- T4U -->
+        <label for="T4U">T4U:</label>
+        <input type="number" id="T4U" name="T4U" step="0.01" required>
+
+        <!-- FTI Measured -->
+        <label for="FTI_measured">FTI Measured:</label>
+        <select id="FTI_measured" name="FTI_measured" required>
+            <option value=0>False</option>
+            <option value=1>True</option>
+        </select>
+
+        <!-- FTI -->
+        <label for="FTI">FTI:</label>
+        <input type="number" id="FTI" name="FTI" step="0.01" required>
+
+        <!-- TBG Measured -->
+        <label for="TBG_measured">TBG Measured:</label>
+        <select id="TBG_measured" name="TBG_measured" required>
+            <option value=0>False</option>
+            <option value=1>True</option>
+        </select>
+
+        
+
+        <!-- Referral Source -->
+        <label for="referral_source">Referral Source:</label>
+        <select id="referral_source" name="referral_source" required>
+            <option value=0>STMW</option>
+            <option value=1>SVHC</option>
+            <option value=3>SVI</option>
+            <option value=2>SVHD</option>
+            <option value=4>Other</option>
+        </select>
+
+
+        <!-- Submit Button -->
+        <button type="submit">Submit</button>
+    </form>
+
+
+</body>
+</html>
